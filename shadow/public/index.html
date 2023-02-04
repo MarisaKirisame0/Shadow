@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+      <title id="title"></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false, //关闭js加载过程信息
+    messageStyle: "none", //不显示信息
+    showMathMenu: false, //关闭右击菜单显示
+    availableFonts: ["STIX", "TeX"], //可选字体
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    }
+  });
+  </script>
+  <script>
+      let html_title='BLOG';
+      import axios from "_axios@1.2.2@axios";
+      axios.get('http://localhost:8080/web/getBasic')
+          .then(function (response) {
+              html_title = response.data[0].title;
+          })
+          .catch(function (error) {console.log(error);});
+      let title_block = document.getElementById("title")
+      title_block.innerHTML = html_title;
+  </script>
+  </body>
+</html>
