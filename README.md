@@ -2,7 +2,7 @@
 
 ## 介绍
 
-[Shadow](https://www.shuangxing.top)是一款完全开源的、易于使用的、具备前后端分离特性的博客主题。
+[Shadow](https://github.com/MarisaKirisame0/Shadow)是一款完全开源的、易于使用的、具备前后端分离特性的博客主题。
 
 :triangular_flag_on_post:网站演示：[雾雨霜星](https://www.shuangxing.top)
 
